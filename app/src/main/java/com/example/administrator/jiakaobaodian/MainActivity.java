@@ -1,42 +1,69 @@
 package com.example.administrator.jiakaobaodian;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.KeyEvent;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
     //双击退出变量声明
     private long firstTime = 0;
 
+    //导航栏控件布局声明
+    private LinearLayout tab_menu_baoming;
+    private LinearLayout tab_menu_jiakao;
+    private LinearLayout tab_menu_maiche;
+    private LinearLayout tab_menu_faxian;
+    private LinearLayout tab_menu_baibaoxiang;
+
+    //导航栏字体控件声明
+    private TextView tab_menu_baoming_text;
+    private TextView tab_menu_jiakao_text;
+    private TextView tab_menu_maiche_text;
+    private TextView tab_menu_faxian_text;
+    private TextView tab_menu_baibaoxiang_text;
+
+    //五大界面布局
+    private Fragment_baoming Baoming;
+    private Fragment_maiche Maiche;
+    private Fragment__faxian Faxian;
+    private Fragment_baibaoxiang Baibaoxiang;
+    private Fragment_test Jiakao;
+
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -45,6 +72,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        init();
+        setSelected();
+        setDefaultFragment();
     }
 
     @Override
@@ -121,6 +152,124 @@ public class MainActivity extends AppCompatActivity
 
 
         return super.onKeyUp(keyCode, event);
+    }
+
+    //初始化控件
+    public void init(){
+        tab_menu_baoming = (LinearLayout) findViewById(R.id.tab_menu_baoming);
+        tab_menu_jiakao = (LinearLayout) findViewById(R.id.tab_menu_jiakao);
+        tab_menu_maiche = (LinearLayout) findViewById(R.id.tab_menu_maiche);
+        tab_menu_faxian = (LinearLayout) findViewById(R.id.tab_menu_faxian);
+        tab_menu_baibaoxiang = (LinearLayout) findViewById(R.id.tab_menu_baibaoxiang);
+
+        tab_menu_baoming_text = (TextView) findViewById(R.id.teb_menu_baoming_text);
+        tab_menu_jiakao_text = (TextView) findViewById(R.id.teb_menu_jiakao_text);
+        tab_menu_maiche_text = (TextView) findViewById(R.id.tab_menu_maiche_text);
+        tab_menu_faxian_text = (TextView) findViewById(R.id.tab_menu_faxian_text);
+        tab_menu_baibaoxiang_text = (TextView) findViewById(R.id.tab_menu_baibaoxiang_text);
+
+        tab_menu_baoming.setOnClickListener(this);
+        tab_menu_jiakao.setOnClickListener(this);
+        tab_menu_maiche.setOnClickListener(this);
+        tab_menu_faxian.setOnClickListener(this);
+        tab_menu_baibaoxiang.setOnClickListener(this);
+
+    }
+
+    //定义初始界面方法
+    private void setDefaultFragment(){
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        Jiakao = new Fragment_test();
+        transaction.replace(R.id.fragment_contentview, Jiakao);
+        transaction.commit();
+        tab_menu_jiakao_text.setSelected(true);
+
+    }
+
+
+    //重置所有TextView的选择状态
+    private void setSelected(){
+
+        tab_menu_baoming_text.setSelected(false);
+        tab_menu_jiakao_text.setSelected(false);
+        tab_menu_maiche_text.setSelected(false);
+        tab_menu_faxian_text.setSelected(false);
+        tab_menu_baibaoxiang_text.setSelected(false);
+
+    }
+
+    //下方导航栏点击监听
+    @Override
+    public void onClick(View v) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        switch (v.getId()){
+            case R.id.tab_menu_baoming:
+                if(tab_menu_baoming_text.isSelected()){
+                    break;
+                }else{
+                    setSelected();
+                    tab_menu_baoming_text.setSelected(true);
+                    Baoming = new Fragment_baoming();
+                    transaction.replace(R.id.fragment_contentview, Baoming);
+                    break;
+                }
+
+
+            case R.id.tab_menu_jiakao:
+                if (tab_menu_jiakao_text.isSelected()){
+                    break;
+                }else{
+                    setSelected();
+                    tab_menu_jiakao_text.setSelected(true);
+                    Jiakao = new Fragment_test();
+                    transaction.replace(R.id.fragment_contentview, Jiakao);
+                    break;
+                }
+
+
+            case R.id.tab_menu_maiche:
+                if(tab_menu_maiche_text.isSelected()){
+                    break;
+                }else{
+                    setSelected();
+                    tab_menu_maiche_text.setSelected(true);
+                    Maiche = new Fragment_maiche();
+                    transaction.replace(R.id.fragment_contentview, Maiche);
+                    break;
+                }
+
+
+            case R.id.tab_menu_faxian:
+                if(tab_menu_faxian_text.isSelected()){
+                    break;
+                }else{
+                    setSelected();
+                    tab_menu_faxian_text.setSelected(true);
+                    Faxian = new Fragment__faxian();
+                    transaction.replace(R.id.fragment_contentview, Faxian);
+                    break;
+                }
+
+
+            case R.id.tab_menu_baibaoxiang:
+                if(tab_menu_baibaoxiang_text.isSelected()){
+                    break;
+                }else{
+                    setSelected();
+                    tab_menu_baibaoxiang_text.setSelected(true);
+                    Baibaoxiang = new Fragment_baibaoxiang();
+                    transaction.replace(R.id.fragment_contentview, Baibaoxiang);
+                    break;
+                }
+
+
+        }
+        transaction.commit();
+
     }
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:style="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/jiakao_toolbar_message"
+        app:actionLayout="@layout/toolbar_menu_message"
+        android:title="消息"
+        app:showAsAction="never"
+         />
+
+    <item
+        android:id="@+id/jiakao_toolbar_jiakaodazuozhan"
+        android:title="驾考大作战"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/jiakao_toolbar_xuecheqiandao"
+        android:title="学车签到"
+        app:showAsAction="never"
+        />
+
+</menu>
