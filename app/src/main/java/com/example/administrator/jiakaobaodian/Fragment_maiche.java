@@ -27,6 +27,7 @@ public class Fragment_maiche extends Fragment {
 
     private void init(View view){
         fragment_maiche_toolbar = (Toolbar) view.findViewById(R.id.fragment_maiche_toolbar);
+        fragment_maiche_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
     }
 
 }

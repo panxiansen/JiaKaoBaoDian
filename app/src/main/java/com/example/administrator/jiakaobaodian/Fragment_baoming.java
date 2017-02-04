@@ -26,6 +26,7 @@ public class Fragment_baoming extends Fragment {
 
     private void init(View view){
         fragment_baoming_toolbar = (Toolbar) view.findViewById(R.id.fragment_baoming_toolbar);
+        fragment_baoming_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
     }
 
 }

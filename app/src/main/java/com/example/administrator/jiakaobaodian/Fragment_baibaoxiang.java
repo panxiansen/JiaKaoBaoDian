@@ -26,6 +26,7 @@ public class Fragment_baibaoxiang extends Fragment {
 
     private void init(View view){
         fragment_baibaoxiang_toolbar = (Toolbar) view.findViewById(R.id.fragment_baibaoxiang_toolbar);
+        fragment_baibaoxiang_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
     }
 
 }

@@ -27,6 +27,7 @@ public class Fragment__faxian extends Fragment {
 
     private void init(View view){
         fragment_faxian_toolbar = (Toolbar) view.findViewById(R.id.fragment_faxian_toolbar);
+        fragment_faxian_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
     }
 
 }
