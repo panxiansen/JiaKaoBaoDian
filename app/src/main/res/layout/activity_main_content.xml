@@ -16,7 +16,7 @@
         android:id="@+id/tab_menu_line"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#D3D3D3"
+        android:background="@color/whitesmoke"
         android:layout_above="@+id/tab_menu"
         />
 

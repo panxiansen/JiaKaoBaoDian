@@ -1,5 +1,6 @@
 package com.example.administrator.jiakaobaodian;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity
     private Fragment_test Jiakao;
 
     private Toolbar toolbar;
+
+    //登录界面变量声明
+    private ImageButton menu_login_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +173,10 @@ public class MainActivity extends AppCompatActivity
         tab_menu_faxian_text = (TextView) findViewById(R.id.tab_menu_faxian_text);
         tab_menu_baibaoxiang_text = (TextView) findViewById(R.id.tab_menu_baibaoxiang_text);
 
+        //登录界面
+        menu_login_image = (ImageButton) findViewById(R.id.menu_login_image);
+        menu_login_image.setOnClickListener(this);
+
         tab_menu_baoming.setOnClickListener(this);
         tab_menu_jiakao.setOnClickListener(this);
         tab_menu_maiche.setOnClickListener(this);
@@ -269,6 +278,12 @@ public class MainActivity extends AppCompatActivity
 
         }
         transaction.commit();
+
+        //判断是否点击登录按钮，转到登录界面
+        if (v.getId() == R.id.menu_login_image){
+            Intent intent = new Intent(MainActivity.this, Login_Activity.class);
+            startActivity(intent);
+        }
 
     }
 
