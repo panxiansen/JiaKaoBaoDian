@@ -1,6 +1,8 @@
 package com.example.administrator.jiakaobaodian;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -48,6 +50,7 @@ public class Fragment_test extends Fragment {
     }
 
     //初始化各种控件
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private void initControls(View view){
 
         //初始化界面里的控件

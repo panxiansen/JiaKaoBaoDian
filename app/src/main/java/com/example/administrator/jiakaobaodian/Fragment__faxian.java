@@ -1,5 +1,7 @@
 package com.example.administrator.jiakaobaodian;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,6 +27,7 @@ public class Fragment__faxian extends Fragment {
         return view;
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private void init(View view){
         fragment_faxian_toolbar = (Toolbar) view.findViewById(R.id.fragment_faxian_toolbar);
         fragment_faxian_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);

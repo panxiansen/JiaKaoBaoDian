@@ -1,5 +1,7 @@
 package com.example.administrator.jiakaobaodian;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +26,7 @@ public class Fragment_baibaoxiang extends Fragment {
         return view;
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private void init(View view){
         fragment_baibaoxiang_toolbar = (Toolbar) view.findViewById(R.id.fragment_baibaoxiang_toolbar);
         fragment_baibaoxiang_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);

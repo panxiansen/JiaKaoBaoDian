@@ -1,6 +1,8 @@
 package com.example.administrator.jiakaobaodian;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     //登录界面变量声明
     private ImageButton menu_login_image;
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity
         setDefaultFragment();
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
