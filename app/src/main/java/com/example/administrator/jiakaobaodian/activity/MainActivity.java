@@ -1,4 +1,4 @@
-package com.example.administrator.jiakaobaodian;
+package com.example.administrator.jiakaobaodian.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -21,6 +21,13 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.administrator.jiakaobaodian.R;
+import com.example.administrator.jiakaobaodian.fragment.Fragment__faxian;
+import com.example.administrator.jiakaobaodian.fragment.Fragment_baibaoxiang;
+import com.example.administrator.jiakaobaodian.fragment.Fragment_baoming;
+import com.example.administrator.jiakaobaodian.fragment.Fragment_maiche;
+import com.example.administrator.jiakaobaodian.fragment.Fragment_test;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
@@ -179,7 +186,7 @@ public class MainActivity extends AppCompatActivity
 
         //登录界面
         menu_login_image = (ImageButton) findViewById(R.id.menu_login_image);
-        menu_login_image.setOnClickListener(this);
+//        menu_login_image.setOnClickListener(this);
 
         tab_menu_baoming.setOnClickListener(this);
         tab_menu_jiakao.setOnClickListener(this);

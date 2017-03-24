@@ -1,4 +1,4 @@
-package com.example.administrator.jiakaobaodian;
+package com.example.administrator.jiakaobaodian.fragment;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -10,26 +10,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.jiakaobaodian.R;
+
 /**
  * Created by Administrator on 2016/12/11.
  */
 
-public class Fragment_baibaoxiang extends Fragment {
+public class Fragment__faxian extends Fragment {
 
-    private Toolbar fragment_baibaoxiang_toolbar;
+    private Toolbar fragment_faxian_toolbar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_baibaoxiang, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_faxian, container, false);
         init(view);
         return view;
     }
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private void init(View view){
-        fragment_baibaoxiang_toolbar = (Toolbar) view.findViewById(R.id.fragment_baibaoxiang_toolbar);
-        fragment_baibaoxiang_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
+        fragment_faxian_toolbar = (Toolbar) view.findViewById(R.id.fragment_faxian_toolbar);
+        fragment_faxian_toolbar.inflateMenu(R.menu.jiakao_toolbar_menu);
     }
 
 }

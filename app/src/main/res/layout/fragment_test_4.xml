@@ -4,122 +4,147 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
-        android:background="@color/lightgray"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
-
-    <LinearLayout
-        android:id="@+id/tab_menu"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/tab_menu_baoming"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
+            android:orientation="vertical"
             >
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/advertisement_pic"
+                />
+
+            <LinearLayout
+                android:id="@+id/tab_menu"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
                 >
 
-                <TextView
-                    android:id="@+id/teb_menu_baoming_text"
-                    style="@style/normal_text"
-                    android:drawableTop="@mipmap/toutiao__qctt_home_ic_ktcc"
-                    android:textColor="@color/black"
-                    android:text="科一技巧"
-                    />
+                <LinearLayout
+                    android:id="@+id/tab_menu_baoming"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        >
 
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/teb_menu_baoming_text"
+                            style="@style/normal_text"
+                            android:drawableTop="@mipmap/toutiao__qctt_home_ic_ktcc"
+                            android:textColor="@color/black"
+                            android:text="科一技巧"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_menu_jiakao"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/teb_menu_jiakao_text"
+                            style="@style/normal_text"
+                            android:textColor="@color/black"
+                            android:drawableTop="@mipmap/toutiao__qctt_home_ic_lzyy"
+                            android:text="图标速记"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_menu_maiche"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/tab_menu_maiche_text"
+                            style="@style/normal_text"
+                            android:textColor="@color/black"
+                            android:drawableTop="@mipmap/toutiao__qctt_home_ic_more"
+                            android:text="有奖试驾"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_menu_faxian"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/tab_menu_faxian_text"
+                            style="@style/normal_text"
+                            android:textColor="@color/black"
+                            android:drawableTop="@mipmap/toutiao__qctt_home_ic_ppgs"
+                            android:text="学员福利"
+                            />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/whitesmoke"
+                />
+
+
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/tab_menu_jiakao"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                >
-
-                <TextView
-                    android:id="@+id/teb_menu_jiakao_text"
-                    style="@style/normal_text"
-                    android:textColor="@color/black"
-                    android:drawableTop="@mipmap/toutiao__qctt_home_ic_lzyy"
-                    android:text="图标速记"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab_menu_maiche"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                >
-
-                <TextView
-                    android:id="@+id/tab_menu_maiche_text"
-                    style="@style/normal_text"
-                    android:textColor="@color/black"
-                    android:drawableTop="@mipmap/toutiao__qctt_home_ic_more"
-                    android:text="有奖试驾"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab_menu_faxian"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/tab_menu_faxian_text"
-                    style="@style/normal_text"
-                    android:textColor="@color/black"
-                    android:drawableTop="@mipmap/toutiao__qctt_home_ic_ppgs"
-                    android:text="学员福利"
-                    />
-
-            </RelativeLayout>
 
 
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 
 

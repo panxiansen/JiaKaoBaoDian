@@ -1,8 +1,10 @@
-package com.example.administrator.jiakaobaodian;
+package com.example.administrator.jiakaobaodian.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.administrator.jiakaobaodian.R;
 
 /**
  * Created by Administrator on 2017/2/7.

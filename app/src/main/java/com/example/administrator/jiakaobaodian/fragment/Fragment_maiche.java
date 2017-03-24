@@ -1,4 +1,4 @@
-package com.example.administrator.jiakaobaodian;
+package com.example.administrator.jiakaobaodian.fragment;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.administrator.jiakaobaodian.R;
 
 /**
  * Created by Administrator on 2016/12/11.

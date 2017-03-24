@@ -1,4 +1,4 @@
-package com.example.administrator.jiakaobaodian;
+package com.example.administrator.jiakaobaodian.fragment;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -13,6 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.administrator.jiakaobaodian.activity.CityListActicity;
+import com.example.administrator.jiakaobaodian.R;
+import com.example.administrator.jiakaobaodian.adapter.Fragment_test_PagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
